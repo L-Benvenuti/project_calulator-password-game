@@ -1,3 +1,6 @@
+import { updateBody } from './updateBody';
+import { setup } from './game-setup';
+
 export const initialContent = function () {
   const container = document.getElementById('content');
 
@@ -11,9 +14,12 @@ export const initialContent = function () {
   instructions.classList = 'instructions';
 
   const startBtn = document.createElement('p');
-  startBtn.classList = 'btn';
+  startBtn.classList = 'start-btn';
   startBtn.innerText = 'Start';
-  startBtn.addEventListener('click', () => { console.log('yes!'); });
+  startBtn.addEventListener('click', () => {
+    updateBody();
+    setup();
+  });
 
   container.appendChild(welcome);
   container.appendChild(instructions);
