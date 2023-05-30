@@ -1,4 +1,5 @@
 import { calcElements } from './calculator';
+import { mainRight } from './password-display';
 
 export const setup = function () {
   const container = document.getElementById('content');
@@ -7,13 +8,11 @@ export const setup = function () {
 
   const mainLeft = document.createElement('div');
   mainLeft.classList = 'left-column';
-  const mainRight = document.createElement('div');
-  mainRight.classList = 'right-column';
 
   mainLeft.appendChild(calcElements());
 
   main.appendChild(mainLeft);
-  main.appendChild(mainRight);
+  main.appendChild(mainRight());
 
   container.appendChild(main);
 };
