@@ -21,10 +21,18 @@ export const mainRight = function () {
   const third = document.createElement('li');
   third.classList = 'output';
 
+  const fourth = document.createElement('li');
+  fourth.classList = 'output';
+
+  const fifth = document.createElement('li');
+  fifth.classList = 'output';
+
   output.append(
     first,
     second,
     third,
+    fourth,
+    fifth,
   );
 
   outContainer.appendChild(output);
