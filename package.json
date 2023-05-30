@@ -1,0 +1,23 @@
+{
+  "name": "project_calulator-password-game",
+  "version": "1.0.0",
+  "repository": {
+    "url": "git+https://github.com/l-benvenuti/project_calculator-password-game"
+  },
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "build": "webpack --mode=development",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.84.1",
+    "webpack-cli": "^5.1.1"
+  }
+}
