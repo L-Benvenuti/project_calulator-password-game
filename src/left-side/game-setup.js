@@ -1,5 +1,5 @@
 import { calcElements } from './calculator';
-import { mainRight } from './password-display';
+import { mainRight } from '../right-side/password-display';
 import { calcLogic } from './calc-logic';
 
 export const setup = function () {

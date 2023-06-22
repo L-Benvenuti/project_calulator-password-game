@@ -3,7 +3,7 @@ export const calcElements = function () {
   calculator.classList = 'calculator-grid';
 
   const output = document.createElement('div');
-  output.classList = 'output';
+  output.classList = 'result';
 
   const prevNumb = document.createElement('div');
   prevNumb.classList = 'previous-operand';

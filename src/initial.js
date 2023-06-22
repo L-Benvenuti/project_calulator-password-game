@@ -1,5 +1,5 @@
 import { updateBody } from './updateBody';
-import { setup } from './game-setup';
+import { setup } from './left-side/game-setup';
 
 export const initialContent = function () {
   const container = document.getElementById('content');

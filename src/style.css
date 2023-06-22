@@ -7,6 +7,11 @@ body {
     margin: 0;
 }
 
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
 /* Calculator styling */
 .calculator-grid {
     display: grid;
@@ -18,7 +23,7 @@ body {
 }
 
 /* display */
-.output {
+.result {
     grid-column: 1 / -1;
     background-color: rgb(118, 93, 68, 0.5);
     display: flex;
@@ -30,12 +35,12 @@ body {
     word-break: break-all;
 }
 
-.output > .previous-operand {
+.result > .previous-operand {
     color: rgba(255, 255, 255, 0.85);
     font-size: 1.5rem;
 }
 
-.output > .current-operand {
+.result > .current-operand {
     color: white;
     font-size: 2rem;
 }
@@ -54,4 +59,12 @@ body {
 
 .span-two {
     grid-column: span 2;
+}
+
+/* Right side styling */
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
