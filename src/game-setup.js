@@ -1,5 +1,6 @@
 import { calcElements } from './calculator';
 import { mainRight } from './password-display';
+import { calcLogic } from './calc-logic';
 
 export const setup = function () {
   const container = document.getElementById('content');
@@ -15,4 +16,6 @@ export const setup = function () {
   main.appendChild(mainRight());
 
   container.appendChild(main);
+
+  calcLogic();
 };

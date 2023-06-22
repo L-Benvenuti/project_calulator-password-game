@@ -1,121 +1,99 @@
-import { calcLogic } from './calc-logic';
-
 export const calcElements = function () {
   const calculator = document.createElement('div');
-  calculator.classList = 'calc';
+  calculator.classList = 'calculator-grid';
 
-  const top = document.createElement('div');
-  top.classList = 'top';
-
-  const display = document.createElement('div');
-  display.classList = 'display';
-  display.innerText = '';
+  const output = document.createElement('div');
+  output.classList = 'output';
 
   const prevNumb = document.createElement('div');
-  prevNumb.id = 'prevNumb';
-  const currentNumb = document.createElement('div');
-  currentNumb.id = 'currentNumb';
+  prevNumb.classList = 'previous-operand';
+  prevNumb.setAttribute('data-previous-operand', '');
 
-  display.append(
+  const currentNumb = document.createElement('div');
+  currentNumb.classList = 'current-operand';
+  currentNumb.setAttribute('data-current-operand', '');
+
+  output.append(
     prevNumb,
     currentNumb,
   );
 
-  top.appendChild(display);
-
-  const calcbody = document.createElement('div');
-  calcbody.classList = 'calc-body';
-
-  const clear = document.createElement('div');
-  clear.classList = 'btn';
-  clear.id = 'clear';
+  const clear = document.createElement('button');
+  clear.setAttribute('data-all-clear', '');
+  clear.classList = 'span-two';
   clear.innerText = 'AC';
 
-  const del = document.createElement('div');
-  del.classList = 'btn';
-  del.id = 'del';
+  const del = document.createElement('button');
+  del.setAttribute('data-delete', '');
   del.innerText = 'DEL';
 
-  const div = document.createElement('div');
-  div.classList = 'btn operator';
-  div.id = 'op';
+  const div = document.createElement('button');
+  div.setAttribute('data-operation', '');
   div.innerText = '÷';
 
-  const seven = document.createElement('div');
-  seven.classList = 'btn';
-  seven.id = 'num';
+  const seven = document.createElement('button');
+  seven.setAttribute('data-number', '');
   seven.innerText = '7';
 
-  const eight = document.createElement('div');
-  eight.classList = 'btn';
-  eight.id = 'num';
+  const eight = document.createElement('button');
+  eight.setAttribute('data-number', '');
   eight.innerText = '8';
 
-  const nine = document.createElement('div');
-  nine.classList = 'btn';
-  nine.id = 'num';
+  const nine = document.createElement('button');
+  nine.setAttribute('data-number', '');
   nine.innerText = '9';
 
-  const mul = document.createElement('div');
-  mul.classList = 'btn operator';
-  mul.id = 'op';
+  const mul = document.createElement('button');
+  mul.setAttribute('data-operation', '');
   mul.innerText = '×';
 
-  const four = document.createElement('div');
-  four.classList = 'btn';
-  four.id = 'num';
+  const four = document.createElement('button');
+  four.setAttribute('id', 'blah');
   four.innerText = '4';
 
-  const five = document.createElement('div');
-  five.classList = 'btn';
-  five.id = 'num';
+  const five = document.createElement('button');
+  five.setAttribute('data-number', '');
   five.innerText = '5';
 
-  const six = document.createElement('div');
-  six.classList = 'btn';
-  six.id = 'num';
+  const six = document.createElement('button');
+  six.setAttribute('data-number', '');
   six.innerText = '6';
 
-  const sub = document.createElement('div');
-  sub.classList = 'btn operator';
-  sub.id = 'op';
+  const sub = document.createElement('button');
+  sub.setAttribute('data-operation', '');
   sub.innerText = '-';
 
-  const one = document.createElement('div');
-  one.classList = 'btn';
-  one.id = 'num';
+  const one = document.createElement('button');
+  one.setAttribute('data-number', '');
   one.innerText = '1';
 
-  const two = document.createElement('div');
-  two.classList = 'btn';
-  two.id = 'num';
+  const two = document.createElement('button');
+  two.setAttribute('data-number', '');
   two.innerText = '2';
 
-  const three = document.createElement('div');
-  three.classList = 'btn';
-  three.id = 'num';
+  const three = document.createElement('button');
+  three.setAttribute('data-number', '');
   three.innerText = '3';
 
-  const sum = document.createElement('div');
-  sum.classList = 'btn operator';
-  sum.id = 'op';
+  const sum = document.createElement('button');
+  sum.setAttribute('data-operation', '');
   sum.innerText = '+';
 
-  const zero = document.createElement('div');
-  zero.classList = 'btn';
+  const zero = document.createElement('button');
+  zero.setAttribute('data-number', '');
   zero.innerText = '0';
 
-  const dot = document.createElement('div');
-  dot.classList = 'btn';
-  dot.id = '.';
+  const dot = document.createElement('button');
+  dot.setAttribute('data-number', '');
   dot.innerText = '.';
 
-  const result = document.createElement('div');
-  result.classList = 'btn';
-  result.id = 'result';
+  const result = document.createElement('button');
+  result.classList = 'span-two';
+  result.setAttribute('data-equals', '');
   result.innerText = '=';
 
-  calcbody.append(
+  calculator.append(
+    output,
     clear,
     del,
     div,
@@ -135,10 +113,6 @@ export const calcElements = function () {
     dot,
     result,
   );
-
-  calculator.append(top, calcbody);
-
-  calcLogic();
 
   return calculator;
 };
