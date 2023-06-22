@@ -1,6 +1,7 @@
-import { calcElements } from './calculator';
-import { mainRight } from '../right-side/password-display';
-import { calcLogic } from './calc-logic';
+import { calcElements } from './left-side/calculator';
+import { mainRight } from './right-side/password-display';
+import { calcLogic } from './left-side/calc-logic';
+import { capyDisplay } from './right-side/capy-display';
 
 export const setup = function () {
   const container = document.getElementById('content');
@@ -18,4 +19,5 @@ export const setup = function () {
   container.appendChild(main);
 
   calcLogic();
+  capyDisplay();
 };

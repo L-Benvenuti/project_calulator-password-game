@@ -1,10 +1,20 @@
+import Initial from '../capy-imgs/capyGame.png';
+
 export const mainRight = function () {
   const mainRight = document.createElement('div');
   mainRight.classList = 'right-column';
 
   const capyDisplay = document.createElement('div');
   capyDisplay.classList = 'image-display';
-  capyDisplay.innerText = 'Here is going to show the capys faces as the game progresses';
+
+  const firstImg = new Image();
+  firstImg.src = Initial;
+
+  capyDisplay.appendChild(firstImg);
+
+  const tempBtn = document.createElement('button');
+  tempBtn.id = 'randomize';
+  tempBtn.innerText = 'Generate Image';
 
   const outContainer = document.createElement('div');
   outContainer.classList = 'outContainer';
@@ -39,6 +49,7 @@ export const mainRight = function () {
 
   mainRight.append(
     capyDisplay,
+    tempBtn,
     outContainer,
   );
 

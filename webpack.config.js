@@ -7,8 +7,8 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
-    // CSS loader
     rules: [
+      // CSS loader
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
@@ -16,6 +16,11 @@ module.exports = {
       // imgs loader
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
+      // font loader
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
       },
     ],

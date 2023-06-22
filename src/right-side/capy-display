@@ -1,0 +1,68 @@
+import Bathing from '../capy-imgs/bathingcapy.png';
+import Baby from '../capy-imgs/capybaby.png';
+import Fam from '../capy-imgs/capyfam.png';
+import Alone from '../capy-imgs/lonelycapy.png';
+import Stare from '../capy-imgs/staringcapy.png';
+
+const capyImgs = function () {
+  const bathingcapy = new Image();
+  bathingcapy.src = Bathing;
+
+  const babycapy = new Image();
+  babycapy.src = Baby;
+
+  const capyfam = new Image();
+  capyfam.src = Fam;
+
+  const lonelycapy = new Image();
+  lonelycapy.src = Alone;
+
+  const staringcapy = new Image();
+  staringcapy.src = Stare;
+
+  return {
+    bathingcapy,
+    babycapy,
+    capyfam,
+    lonelycapy,
+    staringcapy,
+  };
+};
+
+export const capyDisplay = function () {
+  const tempBtn = document.getElementById('randomize');
+  const imgDisplay = document.querySelector('.image-display');
+
+  tempBtn.addEventListener('click', () => {
+    imgDisplay.innerHTML = '';
+
+    function randomNum() {
+      const random = Math.floor(Math.random() * 5);
+      return random;
+    }
+
+    switch (randomNum()) {
+      case 0:
+        imgDisplay.appendChild(capyImgs().bathingcapy);
+        break;
+
+      case 1:
+        imgDisplay.appendChild(capyImgs().babycapy);
+        break;
+
+      case 2:
+        imgDisplay.appendChild(capyImgs().capyfam);
+        break;
+
+      case 3:
+        imgDisplay.appendChild(capyImgs().lonelycapy);
+        break;
+
+      case 4:
+        imgDisplay.appendChild(capyImgs().staringcapy);
+        break;
+
+      default:
+    }
+  });
+};

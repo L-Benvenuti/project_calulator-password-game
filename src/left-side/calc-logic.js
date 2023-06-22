@@ -100,8 +100,6 @@ class Calculator {
 }
 
 export const calcLogic = function () {
-  console.log('this function is being called at least');
-
   // initializing buttons and display
   const numberBtns = document.querySelectorAll('[data-number]');
   const operationBtns = document.querySelectorAll('[data-operation]');
@@ -112,8 +110,6 @@ export const calcLogic = function () {
   const currentNumText = document.querySelector('[data-current-operand]');
 
   const calculator = new Calculator(previousNumText, currentNumText);
-
-  console.log(numberBtns);
 
   numberBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
